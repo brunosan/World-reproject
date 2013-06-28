@@ -3,7 +3,7 @@
 <style>
 
 body {
-  background: #222;
+  background: #white;
 }
 
 </style>
@@ -25,12 +25,12 @@ function onload() {
   var dx = image.width,
       dy = image.height;
 
-  var projection = d3.geo.mercator().rotate([Math.floor(Math.random()*360.),Math.floor(Math.random()*360.),Math.floor(Math.random()*360.)]);
+  var projection = d3.geo.mercator().rotate([Math.floor(Math.random()*360.),Math.floor(Math.random()*180.),Math.floor(Math.random()*360.)]);
 
   var path = d3.geo.path()
     .projection(projection);
 
-  var canvas = d3.select("body").append("canvas")
+  var canvas = d3.select("#map").append("canvas")
     .attr("width", width)
     .attr("height", height);
 
@@ -59,3 +59,25 @@ function onload() {
 }
 
 </script>
+
+<h3>The World</h3> (just from another angle)
+
+<br>
+<div id="map"></div>
+
+<br>
+
+<p>
+  Everytime you load this page it will make a random rotation for the re-projection of the World. 
+
+<p>
+  <strong>The way we look at the World it´s important.</strong>
+
+<br>
+<p>A quick Idea hacked away in a few minutes modifying Mike Bostok´s code to <a href="http://bl.ocks.org/mbostock/4329423">reproject a raster</a>. Here´s <a href="https://github.com/brunosan/World-reproject">the code</a>.
+</div>
+
+<a href="https://github.com/brunosan/World-reproject"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+</body>
+</html>
